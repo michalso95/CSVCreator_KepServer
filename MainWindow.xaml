@@ -1,0 +1,74 @@
+﻿<Window x:Class="AddTagsIOM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AddTagsIOM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="1100"
+        Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Top"> 
+            <Button x:Name="openBtn" Content="Read *.txt file" VerticalAlignment="Top" Height="30" Width="100" Margin="20 20 20 20" Click="OpenBtn_Click"/>
+            <Label x:Name="numOfTags" Content=" " VerticalAlignment="Top" Margin="0 10 0 0"/>
+        </StackPanel>
+        <Grid>
+        <StackPanel Orientation="Horizontal" Height="200" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" Margin="20 50 20 20">
+                <Label Content="Tag name:" Margin="0 5 0 5"/>
+                <TextBox x:Name="manualTagName" Text="tagname" Margin="0 5 0 5" Width="150"/>
+                <CheckBox x:Name="autoTagName" Content="Tag Name from file" Margin="0 5 0 5" Click="AutoTagName_Click" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0 50 20 20">
+                <Label Content="Tag address:" Margin="0 5 0 5"/>
+                <TextBox x:Name="tagAddress" Text="tagaddress" Margin="0 5 0 5" Width="250" MaxWidth="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0 50 20 20">
+                <Label Content="Tag type:" Margin="0 5 0 5"/>
+                <ComboBox x:Name="typeCombo"/>
+                <CheckBox x:Name="autoTagType" Content="Tag type from file" Margin="0 5 0 5" Click="AutoTagType_Click" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0 50 20 20">
+                <Label Content="Rights:" Margin="0 5 0 5"/>
+                <ComboBox x:Name="rightsCombo"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0 50 20 20">
+                <Label Content="Scan rate:" Margin="0 5 0 5"/>
+                <TextBox x:Name="scanRate" Text="100" Margin="0 5 0 5"/>
+            </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 50 20 20">
+                    <Button x:Name="createDeviceBtn" Content="Create *csv file for device" VerticalAlignment="Center" Margin="10 30 0 0" Click="CreateDeviceBtn_Click" IsEnabled="False"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 50 20 20">
+                    <Button x:Name="addTagDeviceBtn" Content="Add tag to *csv file for device" VerticalAlignment="Center" Margin="10 30 0 0" Click="AddTagDeviceBtn_Click" IsEnabled="False"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="200" VerticalAlignment="Bottom">
+                <StackPanel Orientation="Vertical" Margin="20 50 20 20">
+                    <Label Content="Device name:" Margin="0 5 0 5"/>
+                    <TextBox x:Name="deviceName" Text="Device0" Margin="0 5 0 5" Width="150"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 50 20 20">
+                    <Label Content="Server tag:" Margin="0 5 0 5"/>
+                    <TextBox x:Name="manualTagNameRest" Text="tagname" Margin="0 5 0 5" Width="250" MaxWidth="250"/>
+                    <CheckBox x:Name="autoTagNameRest" Content="Tag Name from file" Margin="0 5 0 5" Click="AutoTagNameRest_Click" IsEnabled="False"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 50 20 20">
+                    <Label Content="Tag type:" Margin="0 5 0 5"/>
+                    <ComboBox x:Name="typeComboRest"/>
+                    <CheckBox x:Name="autoTagTypeRest" Content="Tag type from file" Margin="0 5 0 5" Click="AutoTagTypeRest_Click" IsEnabled="False"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 50 20 20">
+                <Label Content="Scan rate:" Margin="0 5 0 5"/>
+                <TextBox x:Name="scanRateRest" Text="100" Margin="0 5 0 5"/>
+            </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 50 20 20">
+                    <Button x:Name="createRestBtn" Content="Create *csv file for REST" VerticalAlignment="Center" Margin="10 30 0 0" Click="CreateRestBtn_Click" IsEnabled="False"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 50 20 20">
+                    <Button x:Name="addTagRestBtn" Content="Add tag to *csv file for REST" VerticalAlignment="Center" Margin="10 30 0 0" Click="AddTagRestBtn_Click" IsEnabled="False"/>
+                </StackPanel>
+        </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
